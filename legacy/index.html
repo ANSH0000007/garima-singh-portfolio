@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Garima Singh — graphic design, branding, and editorial digital work." />
+  <title>Garima Singh — Graphic Design</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@300,400,500,600,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#fff8f8',
+            blush: '#fff0f3',
+            rose: '#fbdae5',
+            'rose-deep': '#ffe0ea',
+            cocoa: '#28161e',
+            plum: '#180912',
+            'plum-soft': '#2a101f',
+            muted: '#4c4548',
+            tertiary: '#b5106b',
+            'tertiary-dim': '#8d0051',
+            secondary: '#755663',
+            outline: '#cfc4c7',
+          },
+          fontFamily: {
+            display: ['"Clash Display"', 'system-ui', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          },
+          borderRadius: {
+            organic: '42% 58% 70% 30% / 45% 45% 55% 55%',
+          },
+          spacing: {
+            'page': 'clamp(1.25rem, 4vw, 4rem)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Scroll-snap disabled — conflicts with Lenis smooth scroll */
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .font-display { font-family: "Clash Display", system-ui, sans-serif; }
+    .font-serif { font-family: "Playfair Display", Georgia, serif; }
+    .font-body { font-family: "DM Sans", system-ui, sans-serif; }
+
+    body {
+      background:
+        radial-gradient(circle at 50% 4rem, rgba(255, 240, 243, 0.95), rgba(255, 248, 248, 0.82) 24rem, transparent 42rem),
+        linear-gradient(180deg, #fff8f8 0%, #fff0f3 34%, #180912 64%, #fff0f3 100%);
+    }
+
+    #cursor-blob {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 176, 204, 0.45) 0%, rgba(181, 16, 107, 0.12) 70%);
+      mix-blend-mode: soft-light;
+      filter: blur(48px);
+      opacity: 0.55;
+      pointer-events: none;
+      z-index: 0;
+      will-change: transform;
+    }
+
+    .float-soft {
+      animation: floatSoft 7s ease-in-out infinite;
+    }
+    .float-soft-delay {
+      animation: floatSoft 9s ease-in-out infinite 2s;
+    }
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-16px) rotate(3deg); }
+    }
+
+    .portrait-organic {
+      border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    }
+
+    .nav-shell {
+      padding: 0.75rem clamp(1rem, 3vw, 2rem);
+    }
+
+    .nav-bar {
+      max-width: 56rem;
+      margin-inline: auto;
+      padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid rgba(181, 16, 107, 0.12);
+      background: rgba(255, 248, 248, 0.75);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px rgba(44, 34, 38, 0.06);
+      transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+
+    .nav-bar.is-scrolled {
+      background: rgba(255, 248, 248, 0.95);
+      border-color: rgba(181, 16, 107, 0.2);
+      box-shadow: 0 12px 40px rgba(181, 16, 107, 0.1);
+    }
+
+    .nav-link {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      color: var(--nav-muted, #6e6168);
+      transition: color 0.25s ease, background 0.25s ease;
+    }
+
+    .nav-link:hover {
+      color: #b5106b;
+      background: rgba(181, 16, 107, 0.08);
+    }
+
+    .nav-link.is-active {
+      color: #fff;
+      background: #b5106b;
+    }
+
+    .nav-cta {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.15rem;
+      border-radius: 999px;
+      background: #b5106b;
+      color: #fff;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: #8d0051;
+      transform: translateY(-1px);
+    }
+
+    [id] {
+      scroll-margin-top: 6rem;
+    }
+
+    .btn-primary {
+      position: relative;
+      z-index: 30;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .hero-actions {
+      position: relative;
+      z-index: 30;
+      margin-top: 1.5rem;
+    }
+
+    .tool-logos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 480px) {
+      .tool-logos {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .tool-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 4rem;
+      padding: 0.75rem;
+      background: #fff8f8;
+      border-radius: 1rem;
+      border: 1px solid rgba(207, 196, 199, 0.5);
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .tool-logo:hover {
+      border-color: rgba(181, 16, 107, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(181, 16, 107, 0.12);
+    }
+
+    .tool-logo img {
+      width: 2rem;
+      height: 2rem;
+      object-fit: contain;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: #fff8f8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem clamp(1.25rem, 4vw, 4rem);
+      gap: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s;
+    }
+    .mobile-menu.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+    body.menu-open { overflow: hidden; }
+
+    .marquee-wrap {
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      white-space: nowrap;
+    }
+    .marquee-track span {
+      padding-right: 2.5rem;
+    }
+
+    .scroll-scene {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .scene-panel,
+    .reveal-panel {
+      position: relative;
+      border: 1px solid rgba(181, 16, 107, 0.16);
+      background: rgba(255, 248, 248, 0.72);
+      box-shadow: 0 24px 90px rgba(181, 16, 107, 0.12);
+      backdrop-filter: blur(18px);
+    }
+
+    .scene-glow {
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      filter: blur(48px);
+      opacity: 0.58;
+      z-index: -1;
+    }
+
+    .hero-shell {
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 34%, rgba(251, 218, 229, 0.82), transparent 23rem),
+        linear-gradient(180deg, rgba(255, 248, 248, 0.98), rgba(255, 240, 243, 0.9));
+    }
+
+    .hero-scene::after {
+      content: "";
+      position: absolute;
+      inset: 18% 12% auto;
+      height: min(52vw, 34rem);
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(181, 16, 107, 0.16), transparent 64%);
+      z-index: -1;
+    }
+
+    .work-reel-section {
+      min-height: 100vh;
+      color: #fff8f8;
+      background:
+        radial-gradient(circle at 50% 12%, rgba(181, 16, 107, 0.38), transparent 20rem),
+        radial-gradient(circle at 18% 82%, rgba(255, 176, 204, 0.18), transparent 18rem),
+        linear-gradient(140deg, #28161e 0%, #180912 52%, #3a1028 100%);
+    }
+
+    .work-reel-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 240, 243, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 240, 243, 0.045) 1px, transparent 1px);
+      background-size: 4.5rem 4.5rem;
+      mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+      z-index: -1;
+    }
+
+    .work-reel-stage {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-block: 6.5rem;
+    }
+
+    .work-reel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1rem, 2.4vw, 1.75rem);
+      align-items: stretch;
+    }
+
+    .work-reel-card {
+      position: relative;
+      transform-style: preserve-3d;
+      perspective: 1200px;
+    }
+
+    .work-reel-card .tilt-inner {
+      height: 100%;
+      background: linear-gradient(180deg, rgba(255, 248, 248, 0.96), rgba(255, 240, 243, 0.88));
+      border-color: rgba(255, 224, 234, 0.36);
+      box-shadow: 0 26px 90px rgba(0, 0, 0, 0.22);
+    }
+
+    .work-reel-card:nth-child(2) {
+      margin-top: 3.5rem;
+    }
+
+    .work-reel-card:nth-child(3) {
+      margin-top: 1.5rem;
+    }
+
+    .work-orbit {
+      position: absolute;
+      width: min(48vw, 34rem);
+      aspect-ratio: 1;
+      border: 1px solid rgba(255, 224, 234, 0.22);
+      border-radius: 999px;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%);
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .about-scene {
+      background:
+        radial-gradient(circle at 88% 20%, rgba(181, 16, 107, 0.16), transparent 20rem),
+        linear-gradient(180deg, #fff0f3 0%, #fff8f8 100%);
+    }
+
+    .experience-scene {
+      background:
+        radial-gradient(circle at 50% 100%, rgba(181, 16, 107, 0.22), transparent 28rem),
+        linear-gradient(180deg, #fff8f8 0%, #fff0f3 100%);
+    }
+
+    .finale-scene {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 176, 204, 0.55), transparent 25rem),
+        linear-gradient(180deg, #fff0f3 0%, #28161e 100%);
+      color: #fff8f8;
+    }
+
+    .finale-scene .skill-chip,
+    .finale-scene p,
+    .finale-scene a {
+      color: inherit;
+    }
+
+    .finale-scene a.btn-primary {
+      color: #fff;
+    }
+
+    .tilt-inner {
+      transform-style: preserve-3d;
+      transition: box-shadow 0.4s ease;
+    }
+    [data-tilt] {
+      perspective: 1400px;
+    }
+    [data-tilt]:hover .tilt-inner {
+      box-shadow: 0 24px 60px rgba(181, 16, 107, 0.12);
+    }
+
+    .skill-chip {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .btn-glow {
+      box-shadow: 0 8px 32px rgba(181, 16, 107, 0.28);
+    }
+    .btn-glow:hover {
+      box-shadow: 0 12px 40px rgba(181, 16, 107, 0.38);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .float-soft, .float-soft-delay { animation: none; }
+      #cursor-blob { display: none !important; }
+    }
+
+    @media (max-width: 767px) {
+      body {
+        background: linear-gradient(180deg, #fff8f8 0%, #fff0f3 46%, #fff8f8 100%);
+      }
+
+      .work-reel-section {
+        color: #28161e;
+        background: linear-gradient(180deg, #fff0f3 0%, #fff8f8 100%);
+      }
+
+      .work-reel-stage {
+        min-height: auto;
+        padding-block: 5rem;
+      }
+
+      .work-reel-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .work-reel-card,
+      .work-reel-card:nth-child(2),
+      .work-reel-card:nth-child(3) {
+        margin-top: 0;
+      }
+
+      .work-reel-card .tilt-inner {
+        box-shadow: 0 16px 54px rgba(181, 16, 107, 0.12);
+      }
+
+      .work-orbit {
+        display: none;
+      }
+
+      .finale-scene {
+        background: linear-gradient(180deg, #fff0f3 0%, #fff8f8 100%);
+        color: #28161e;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-body bg-ivory text-cocoa antialiased selection:bg-tertiary selection:text-white overflow-x-hidden">
+
+  <div id="cursor-blob" aria-hidden="true"></div>
+
+  <!-- Nav -->
+  <header class="fixed top-0 left-0 w-full z-[100] nav-shell">
+    <nav id="nav" class="nav-bar flex justify-between items-center gap-3" aria-label="Main navigation">
+      <a href="#" class="font-display font-semibold text-base md:text-lg tracking-tight uppercase text-cocoa hover:text-tertiary transition-colors duration-300 shrink-0">
+        Garima Singh
+      </a>
+      <div class="hidden md:flex items-center gap-1">
+        <a href="#work" class="nav-link is-active" data-nav-link>Work</a>
+        <a href="#about" class="nav-link" data-nav-link>About</a>
+        <a href="#experience" class="nav-link" data-nav-link>Experience</a>
+        <a href="#contact" class="nav-cta ml-1">Contact</a>
+      </div>
+      <button id="nav-toggle" type="button" class="md:hidden w-10 h-10 rounded-full border border-outline/60 flex items-center justify-center bg-ivory/80" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+        </svg>
+        <span class="sr-only">Menu</span>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <a href="#work" class="font-display text-4xl font-medium text-cocoa">Work</a>
+      <a href="#about" class="font-display text-4xl font-medium text-cocoa">About</a>
+      <a href="#experience" class="font-display text-4xl font-medium text-cocoa">Experience</a>
+      <a href="#contact" class="font-display text-4xl font-medium text-tertiary">Contact</a>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- Hero + Marquee -->
+    <div class="hero-shell min-h-screen flex flex-col pt-28 pb-4 scroll-scene">
+      <section id="hero" class="hero-scene relative flex-1 flex flex-col items-center justify-center text-center px-page overflow-hidden z-10 [&>*]:relative">
+        <div data-hero-blur class="absolute top-24 left-[10%] w-24 h-24 rounded-full bg-rose opacity-50 blur-2xl float-soft pointer-events-none" aria-hidden="true"></div>
+        <div data-hero-blur class="absolute bottom-32 right-[12%] w-32 h-32 rounded-full bg-blush opacity-60 blur-2xl float-soft-delay pointer-events-none" aria-hidden="true"></div>
+
+        <p data-hero-eyebrow class="opacity-0 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-tertiary mb-4">
+          Graphic Design · Branding · Editorial
+        </p>
+
+        <h1 id="hero-title" class="opacity-0 hidden md:block font-display font-semibold text-cocoa leading-[0.92] tracking-tight text-[clamp(4rem,12vw,7.5rem)] mb-6">
+          GARIMA SINGH
+        </h1>
+        <h1 id="hero-title-mobile" class="opacity-0 md:hidden font-display font-semibold text-cocoa text-[clamp(2.5rem,14vw,3.5rem)] leading-none mb-6">
+          Garima Singh
+        </h1>
+
+        <div data-hero-portrait class="opacity-0 order-4 md:order-none relative w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 mx-auto mb-6 md:mb-10 -rotate-2 hover:rotate-0 transition-transform duration-500 z-10">
+          <div class="portrait-organic w-full h-full overflow-hidden bg-rose shadow-[0_20px_60px_rgba(181,16,107,0.15)]">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbu6lokECz3GzmbkKA6ecgVZZ-Vc6YQlaGY1fejuYSMR9exCyns565deoaLKjbuVJ7uRbLezZD-4NEz4Tze_mjaB4grN8OnQBkao_hgvBwGk_XqdmOqvOStZQ43WckYrWgJytQKGXnhJHsjCeI7KtPEmi2IE-EX7EucgO2EbcpzrHNECdAagLMwNr4Nb-fmocZQH70Y4bJD1y25sRQnOjCIou_N0kTXLvLSgH-fdwANjvm3N6tjFHi108zm9RuiWM5_4tx1FXjwLFC"
+              alt="Portrait of Garima Singh"
+              class="w-full h-full object-cover"
+              width="480"
+              height="600"
+            />
+          </div>
+        </div>
+
+        <div class="hero-actions order-3 md:order-none mb-2 md:mb-0">
+          <a data-hero-cta href="#work" class="opacity-0 btn-primary inline-flex items-center px-8 py-4 rounded-full bg-tertiary text-white text-[0.7rem] font-semibold uppercase tracking-[0.16em] btn-glow hover:bg-tertiary-dim transition-colors duration-300">
+            View My Work
+          </a>
+        </div>
+      </section>
+
+      <section class="w-full bg-rose-deep border-y border-tertiary/20 py-5 marquee-wrap" aria-hidden="true">
+        <div class="marquee-track text-tertiary font-semibold text-sm md:text-base uppercase tracking-[0.2em]" data-marquee-track>
+          <span>GARIMA · BRANDING · PACKAGING · EDITORIAL · UI · ILLUSTRATION · </span>
+        </div>
+      </section>
+    </div>
+
+    <!-- Work — cinematic reel -->
+    <section id="work" class="work-reel-section scroll-scene px-page">
+      <div class="scene-glow bg-tertiary w-72 h-72 top-24 left-[8%]" data-scene-glow aria-hidden="true"></div>
+      <div class="scene-glow bg-rose w-80 h-80 bottom-16 right-[8%]" data-scene-glow aria-hidden="true"></div>
+      <div class="work-orbit" data-work-orbit aria-hidden="true"></div>
+      <div class="work-reel-stage">
+        <div class="max-w-6xl mx-auto w-full">
+          <div data-work-header data-reveal class="text-center mb-12 md:mb-16">
+            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-rose-deep md:text-rose mb-3">Portfolio</p>
+            <h2 class="font-serif text-4xl md:text-6xl font-semibold text-cocoa md:text-ivory">Selected Work</h2>
+            <p class="text-muted md:text-rose-deep/80 text-sm md:text-base leading-relaxed max-w-xl mx-auto mt-4">
+              A soft reel of branding, product, and editorial systems shaped with clarity and feeling.
+            </p>
+          </div>
+
+          <div class="work-reel-grid">
+            <article class="work-reel-card" data-work-card data-tilt>
+              <a href="#work-bloom" class="block group h-full">
+                <div data-tilt-inner class="tilt-inner rounded-[1.75rem] p-5 md:p-6 border border-tertiary/10">
+                  <div class="aspect-[4/5] md:aspect-[16/13] rounded-[1.25rem] overflow-hidden bg-rose mb-5">
+                    <img
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiyhad2mT9qjvPtMjdEbaWnPS1nVsJIEYISejTK5QA-lKi5iuRByELzQG7-sTiXl5CaEp7Re4LsX_WpoWxO9UVgqI6IlFeAt_uaomaWmtYgckmmF_KWPdmOQu8foUjLNMjQOrAUWViNc9N85IoKe5YtARCZHN7mWuP1Ob8DBvrC2WhGeCFgsR63qCffYs8piKuRyzNzNpAOxElvwwLp-Lv1WLC4gCo4Gbpfnd94I8-RcqNjxorONaAvtHfH5syMfaHpnvVUTP_aPaM"
+                      alt="Bloom wellness app"
+                      class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="flex flex-wrap justify-between items-baseline gap-2 px-1">
+                    <h3 class="font-serif text-2xl md:text-3xl font-semibold text-cocoa">Bloom</h3>
+                    <span class="skill-chip text-tertiary">UI · Wellness</span>
+                  </div>
+                  <p class="text-muted text-sm mt-2 px-1">Wellness app redesign — calm onboarding &amp; softer visual system.</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="work-reel-card" data-work-card data-tilt>
+              <a href="#work-cafe" class="block group h-full">
+                <div data-tilt-inner class="tilt-inner rounded-[1.75rem] p-5 md:p-6 border border-tertiary/10">
+                  <div class="aspect-[4/5] md:aspect-[16/13] rounded-[1.25rem] overflow-hidden bg-rose mb-5">
+                    <img
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkRhY2T7sFIopFQAHNDHgYWl6v0dIy6hFqU1_6pP7In9nJGRIBybBqp_px2G0uXsSzSpenwQ59QP5mWS2dnYfgc8GnJmVjRVuzPfQ9AdvxRl4UzNPxvK2LxjHg4egyb3eenYFqoUyHUJltMQQ67hgbf8NZ4Pcn0oOCjLQ6QZztxDd4sDLJ7rd_G7LGDWqMPgpAHzBHhaCTvLg9-P15nnLltoBTJl-DGlyXEkk1JKQSO6d1xzq_sE5eLIDAqk3SUtabEFyTIsVisjne"
+                      alt="Café Culture branding"
+                      class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="flex flex-wrap justify-between items-baseline gap-2 px-1">
+                    <h3 class="font-serif text-2xl md:text-3xl font-semibold text-cocoa">Café Culture</h3>
+                    <span class="skill-chip text-tertiary">Brand · Print</span>
+                  </div>
+                  <p class="text-muted text-sm mt-2 px-1">Brand identity &amp; packaging for an independent café.</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="work-reel-card" data-work-card data-tilt>
+              <a href="#work-kiva" class="block group h-full">
+                <div data-tilt-inner class="tilt-inner rounded-[1.75rem] p-5 md:p-6 border border-tertiary/10">
+                  <div class="aspect-[4/5] md:aspect-[16/13] rounded-[1.25rem] overflow-hidden bg-gradient-to-br from-blush to-rose mb-5">
+                    <img
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiyhad2mT9qjvPtMjdEbaWnPS1nVsJIEYISejTK5QA-lKi5iuRByELzQG7-sTiXl5CaEp7Re4LsX_WpoWxO9UVgqI6IlFeAt_uaomaWmtYgckmmF_KWPdmOQu8foUjLNMjQOrAUWViNc9N85IoKe5YtARCZHN7mWuP1Ob8DBvrC2WhGeCFgsR63qCffYs8piKuRyzNzNpAOxElvwwLp-Lv1WLC4gCo4Gbpfnd94I8-RcqNjxorONaAvtHfH5syMfaHpnvVUTP_aPaM"
+                      alt="Kiva fintech dashboard"
+                      class="w-full h-full object-cover opacity-90 group-hover:scale-[1.03] transition-transform duration-700 mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="flex flex-wrap justify-between items-baseline gap-2 px-1">
+                    <h3 class="font-serif text-2xl md:text-3xl font-semibold text-cocoa">Kiva</h3>
+                    <span class="skill-chip text-tertiary">Product UI · Fintech</span>
+                  </div>
+                  <p class="text-muted text-sm mt-2 px-1">Dashboard UI — clarity, hierarchy &amp; trust-forward language.</p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-scene scroll-scene px-page py-24 md:py-36">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
+        <div data-parallax-slow data-reveal class="md:col-span-5 md:col-start-1">
+          <p class="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-tertiary mb-4">About</p>
+          <h2 class="font-serif text-3xl md:text-4xl font-semibold text-cocoa leading-tight mb-4">
+            Designing with purpose.
+          </h2>
+          <p class="text-muted text-[0.95rem] leading-relaxed max-w-md">
+            Graphic design student blending editorial aesthetics with clear, accessible digital systems — warm, intentional, and built to last.
+          </p>
+        </div>
+        <div data-parallax-fast data-reveal class="md:col-span-6 md:col-start-7">
+          <div class="reveal-panel rounded-[2rem] p-8 md:p-10 rotate-1 hover:rotate-0 transition-transform duration-500">
+            <h3 class="skill-chip text-cocoa mb-4">Toolkit</h3>
+            <div class="tool-logos mb-8" data-reveal-stagger>
+              <div class="tool-logo" data-reveal-item title="Figma">
+                <span class="material-symbols-outlined text-tertiary">edit</span>
+              </div>
+              <div class="tool-logo" data-reveal-item title="Adobe Illustrator">
+                <span class="material-symbols-outlined text-tertiary">brush</span>
+              </div>
+              <div class="tool-logo" data-reveal-item title="Adobe Photoshop">
+                <span class="material-symbols-outlined text-tertiary">photo_camera</span>
+              </div>
+              <div class="tool-logo" data-reveal-item title="Adobe After Effects">
+                <span class="material-symbols-outlined text-tertiary">animation</span>
+              </div>
+            </div>
+            <h3 class="skill-chip text-cocoa mb-4">Expertise</h3>
+            <div data-reveal-stagger class="flex flex-wrap gap-2">
+              <span data-reveal-item class="skill-chip px-4 py-2 rounded-full bg-rose text-secondary">UX Research</span>
+              <span data-reveal-item class="skill-chip px-4 py-2 rounded-full bg-rose text-secondary">Visual Design</span>
+              <span data-reveal-item class="skill-chip px-4 py-2 rounded-full bg-rose text-secondary">Prototyping</span>
+              <span data-reveal-item class="skill-chip px-4 py-2 rounded-full bg-rose text-secondary">Design Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="experience-scene scroll-scene px-page py-24 md:py-36">
+      <div data-reveal class="scene-panel max-w-5xl mx-auto rounded-3xl p-8 md:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+          <div>
+            <h2 class="font-serif text-3xl font-semibold text-tertiary mb-8">Experience</h2>
+            <ul class="space-y-10 border-l border-outline pl-6">
+              <li data-reveal class="relative">
+                <span class="absolute -left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-tertiary"></span>
+                <h3 class="font-serif text-xl font-semibold text-cocoa">Product Designer</h3>
+                <p class="skill-chip text-tertiary mt-1 mb-2">Razorpay · 2022 — Present</p>
+                <p class="text-muted text-sm leading-relaxed">Design systems and checkout experiences for enterprise clients.</p>
+              </li>
+              <li data-reveal class="relative">
+                <span class="absolute -left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-rose border-2 border-blush"></span>
+                <h3 class="font-serif text-xl font-semibold text-cocoa">Graphic Design Intern</h3>
+                <p class="skill-chip text-muted mt-1 mb-2">Swiggy · 2021 — 2022</p>
+                <p class="text-muted text-sm leading-relaxed">Tracking interface redesign — satisfaction up 15%.</p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="font-serif text-3xl font-semibold text-tertiary mb-8">Education</h2>
+            <ul class="space-y-10 border-l border-outline pl-6">
+              <li data-reveal class="relative">
+                <span class="absolute -left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-tertiary"></span>
+                <h3 class="font-serif text-xl font-semibold text-cocoa">B.Des Communication Design</h3>
+                <p class="skill-chip text-tertiary mt-1 mb-2">NID Ahmedabad · 2017 — 2021</p>
+                <p class="text-muted text-sm leading-relaxed">Digital product design, typography &amp; visual storytelling.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="finale-scene scroll-scene px-page py-24 md:py-32 text-center border-t border-tertiary/15 relative z-10">
+    <p class="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-tertiary mb-4">Contact</p>
+    <h2 data-footer-heading class="font-display text-4xl md:text-6xl font-semibold text-tertiary leading-tight mb-6 max-w-2xl mx-auto">
+      Let's create something beautiful together.
+    </h2>
+    <a data-footer-cta href="mailto:hello@garimasingh.design" class="btn-primary inline-flex items-center px-10 py-4 rounded-full bg-tertiary text-white font-display text-sm font-semibold uppercase tracking-[0.12em] btn-glow hover:bg-tertiary-dim transition-colors duration-300 mb-10">
+      Let's Chat
+    </a>
+    <nav class="flex flex-wrap justify-center gap-8 mb-10" aria-label="Social">
+      <a href="#" class="skill-chip text-secondary hover:text-tertiary transition-colors">Instagram</a>
+      <a href="#" class="skill-chip text-secondary hover:text-tertiary transition-colors">LinkedIn</a>
+      <a href="#" class="skill-chip text-secondary hover:text-tertiary transition-colors">Dribbble</a>
+      <a href="mailto:hello@garimasingh.design" class="skill-chip text-secondary hover:text-tertiary transition-colors">Email</a>
+    </nav>
+    <p class="text-sm text-muted/80">© 2026 Garima Singh</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/motion.js"></script>
+</body>
+</html>

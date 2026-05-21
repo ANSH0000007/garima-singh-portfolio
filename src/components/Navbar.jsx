@@ -46,10 +46,21 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.classList.toggle('menu-open', isOpen);
-    if (isOpen) lenis?.stop();
-    else lenis?.start();
+    
+    const handleKeyDown = (e) => {
+      if (isOpen && e.key === 'Escape') setIsOpen(false);
+    };
+
+    if (isOpen) {
+      lenis?.stop();
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      lenis?.start();
+    }
+    
     return () => {
       document.body.classList.remove('menu-open');
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, lenis]);
 

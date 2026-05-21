@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
+import MagneticButton from '../MagneticButton';
 
 export default function Footer() {
-  const holdPlaceholder = (event) => event.preventDefault();
-
   return (
     <footer id="contact" className="finale-scene scroll-scene px-page py-24 md:py-32 text-center border-t border-tertiary/15 relative z-10">
       <p className="text-xs font-semibold uppercase text-rose-deep mb-4">Contact</p>
@@ -21,18 +20,18 @@ export default function Footer() {
         Brand, editorial, and digital work with a soft cinematic eye.
       </p>
 
-      <a
+      <MagneticButton
         href="mailto:singhgarima2894@gmail.com"
-        className="btn-primary inline-flex items-center px-10 py-4 rounded-full bg-tertiary text-white text-sm font-semibold uppercase btn-glow btn-glow-pulse-once hover:bg-tertiary-dim transition-colors duration-300 mb-12 pointer-events-auto"
+        className="btn-primary inline-flex items-center px-8 py-4 rounded-full bg-tertiary text-white text-xs font-semibold uppercase btn-glow hover:bg-tertiary-dim transition-colors duration-300 mb-12 pointer-events-auto"
       >
         Let&apos;s Chat
-      </a>
+      </MagneticButton>
 
       <nav className="flex flex-wrap justify-center gap-x-9 gap-y-3 mb-10" aria-label="Social">
-        <a href="#" onClick={holdPlaceholder} className="skill-chip social-link pointer-events-auto">
+        <a href="https://www.instagram.com/creative_garimaa?igsh=dDZudm9nam44Nzcx" target="_blank" rel="noopener noreferrer" className="skill-chip social-link pointer-events-auto">
           Instagram
         </a>
-        <a href="#" onClick={holdPlaceholder} className="skill-chip social-link pointer-events-auto">
+        <a href="https://www.linkedin.com/in/garima-singh-6a34883a1?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="skill-chip social-link pointer-events-auto">
           LinkedIn
         </a>
         <a href="https://www.behance.net/garimasingh110" target="_blank" rel="noopener noreferrer" className="skill-chip social-link pointer-events-auto">
@@ -47,7 +46,7 @@ export default function Footer() {
       </nav>
 
       <p className="text-sm text-rose-deep/65 mb-2">Lucknow, Uttar Pradesh</p>
-      <p className="text-sm text-rose-deep/65">© 2026 Garima Singh</p>
+      <p className="text-sm text-rose-deep/65">© {new Date().getFullYear()} Garima Singh</p>
     </footer>
   );
 }

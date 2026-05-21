@@ -1,14 +1,12 @@
 import { useEffect, useMemo, useRef, useState, lazy, Suspense } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import clsx from 'clsx';
 import WorkLightbox from '../WorkLightbox';
+import TiltCard from '../TiltCard';
 import { workCatalog, workReelConfig } from '../../data/workCatalog';
 
 const WorkDepthField = lazy(() => import('../canvas/WorkDepthField'));
-
-gsap.registerPlugin(ScrollTrigger);
 
 function hashToUnit(input) {
   let hash = 0;
@@ -85,11 +83,20 @@ export default function WorkReel() {
   const sectionRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [showDepthField, setShowDepthField] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(max-width: 767px)').matches;
+    }
+    return false;
+  });
 
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobile = window.matchMedia('(max-width: 767px)');
-    const update = () => setShowDepthField(!reduced.matches && !mobile.matches);
+    const update = () => {
+      setShowDepthField(!reduced.matches && !mobile.matches);
+      setIsMobileView(mobile.matches);
+    };
     update();
     reduced.addEventListener('change', update);
     mobile.addEventListener('change', update);
@@ -274,10 +281,28 @@ export default function WorkReel() {
         });
       });
     },
-    { scope: sectionRef, dependencies: [coreChapters] }
+    { scope: sectionRef, dependencies: [coreChapters, isMobileView] }
   );
 
   const lightboxItem = selectedIndex == null ? null : flatItems[selectedIndex];
+
+  const renderCard = (item) => (
+    <button
+      key={item.id}
+      type="button"
+      data-confidence={item.confidenceLevel}
+      data-peak-type={item.peakType || ''}
+      className={clsx(
+        'work-card',
+        `confidence-${item.confidenceLevel}`,
+        `frame-${item.frameStyle}`,
+        item.isDecompression && 'is-decompression'
+      )}
+      onClick={() => setSelectedIndex(itemIndexById.get(item.id))}
+    >
+      <TiltCard item={item} />
+    </button>
+  );
 
   return (
     <>
@@ -314,29 +339,18 @@ export default function WorkReel() {
                 </header>
 
                 <div className="chapter-grid">
-                  {chapter.items.map((item) => (
-                    <button
-                      key={item.id}
-                      type="button"
-                      data-confidence={item.confidenceLevel}
-                      data-peak-type={item.peakType || ''}
-                      className={clsx(
-                        'work-card',
-                        `confidence-${item.confidenceLevel}`,
-                        `frame-${item.frameStyle}`,
-                        item.isDecompression && 'is-decompression'
-                      )}
-                      onClick={() => setSelectedIndex(itemIndexById.get(item.id))}
-                    >
-                      <div className="work-frame">
-                        <img src={item.src} alt={item.title} className="work-image" loading="lazy" />
+                  {isMobileView || chapter.template === 'quiet-editorial' ? (
+                    chapter.items.map(renderCard)
+                  ) : (
+                    <>
+                      <div className="masonry-column" style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(0.75rem, 1.45vw, 1.15rem)' }}>
+                        {chapter.items.filter((_, i) => i % 2 === 0).map(renderCard)}
                       </div>
-                      <div className="work-card-meta">
-                        <h4>{item.title}</h4>
-                        <p>{item.medium}</p>
+                      <div className="masonry-column" style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(0.75rem, 1.45vw, 1.15rem)' }}>
+                        {chapter.items.filter((_, i) => i % 2 !== 0).map(renderCard)}
                       </div>
-                    </button>
-                  ))}
+                    </>
+                  )}
                 </div>
               </article>
             ))}

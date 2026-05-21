@@ -44,7 +44,7 @@ export default function About() {
               transition={{ duration: 0.65, ease: 'easeOut', delay: 0.15 }}
               className="reveal-panel rounded-[1.75rem] p-8 md:p-10"
             >
-              <h3 className="skill-chip text-cocoa mb-4">Toolkit</h3>
+              <div className="skill-chip text-cocoa mb-4 font-bold">Toolkit</div>
               <div className="tool-logos mb-8">
                 {TOOLS.map((tool) => (
                   <a
@@ -69,7 +69,7 @@ export default function About() {
                   </a>
                 ))}
               </div>
-              <h3 className="skill-chip text-cocoa mb-4">Expertise</h3>
+              <div className="skill-chip text-cocoa mb-4 font-bold">Expertise</div>
               <div className="flex flex-wrap gap-2">
                 {['Logo Design', 'Poster Design', 'Social Media Graphics', 'Creative Thinking', 'Leadership', 'Content Creation'].map((tag) => (
                   <span key={tag} className="skill-chip px-4 py-2 rounded-full bg-rose/60 text-secondary border border-white/55">

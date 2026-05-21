@@ -74,19 +74,19 @@ export default function Experience() {
               />
               <motion.li variants={itemVariants} className="relative">
                 <span className="absolute -left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-tertiary" />
-                <h3 className="font-serif text-xl font-semibold text-cocoa">Freelance Graphic Designer</h3>
+                <h4 className="font-serif text-xl font-semibold text-cocoa">Freelance Graphic Designer</h4>
                 <p className="skill-chip text-tertiary mt-1 mb-2">2025 — Present</p>
                 <p className="text-muted text-sm leading-relaxed">Designed posters, social media graphics, and digital artwork for various clients.</p>
               </motion.li>
               <motion.li variants={itemVariants} className="relative">
                 <span className="absolute -left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-rose border-2 border-blush" />
-                <h3 className="font-serif text-xl font-semibold text-cocoa">Lalit Kala Akademi Exhibition</h3>
+                <h4 className="font-serif text-xl font-semibold text-cocoa">Lalit Kala Akademi Exhibition</h4>
                 <p className="skill-chip text-muted mt-1 mb-2">Project / Exhibition</p>
                 <p className="text-muted text-sm leading-relaxed">Exhibited original artwork and creative designs at a prestigious national academy.</p>
               </motion.li>
               <motion.li variants={itemVariants} className="relative">
                 <span className="absolute -left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-rose border-2 border-blush" />
-                <h3 className="font-serif text-xl font-semibold text-cocoa">Local Company Branding</h3>
+                <h4 className="font-serif text-xl font-semibold text-cocoa">Local Company Branding</h4>
                 <p className="skill-chip text-muted mt-1 mb-2">Project / Freelance</p>
                 <p className="text-muted text-sm leading-relaxed">Received official appreciation for designing a creative and impactful company logo.</p>
               </motion.li>
@@ -109,13 +109,13 @@ export default function Experience() {
               />
               <motion.li variants={itemVariants} className="relative">
                 <span className="absolute -left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-tertiary" />
-                <h3 className="font-serif text-xl font-semibold text-cocoa">Bachelor of Visual Arts (BVA)</h3>
+                <h4 className="font-serif text-xl font-semibold text-cocoa">Bachelor of Visual Arts (BVA)</h4>
                 <p className="skill-chip text-tertiary mt-1 mb-2">Techno Group of Institutions · 2023 — 2027</p>
                 <p className="text-muted text-sm leading-relaxed">Currently pursuing degree in Visual Arts.</p>
               </motion.li>
               <motion.li variants={itemVariants} className="relative">
                 <span className="absolute -left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-rose border-2 border-blush" />
-                <h3 className="font-serif text-xl font-semibold text-cocoa">12th Standard</h3>
+                <h4 className="font-serif text-xl font-semibold text-cocoa">12th Standard</h4>
                 <p className="skill-chip text-muted mt-1 mb-2">Lokbandhu Rajnarayan Memorial Inter College · 2021 — 2022</p>
                 <p className="text-muted text-sm leading-relaxed">Completed high school education.</p>
               </motion.li>

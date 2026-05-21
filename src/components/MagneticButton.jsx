@@ -48,7 +48,7 @@ export default function MagneticButton({ children, className, href, onClick }) {
   };
 
   const Tag = href ? 'a' : 'button';
-  const props = href ? { href } : { type: 'button', onClick };
+  const props = href ? { href, ...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {}) } : { type: 'button', onClick };
 
   return (
     <motion.div

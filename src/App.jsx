@@ -9,6 +9,7 @@ import WorkReel from './components/sections/WorkReel';
 import About from './components/sections/About';
 import Experience from './components/sections/Experience';
 import Footer from './components/sections/Footer';
+import ErrorBoundary from './components/ErrorBoundary';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,23 +32,25 @@ function ScrollRefresh() {
 
 function App() {
   return (
-    <MotionConfig reducedMotion="user">
-      <LenisProvider>
-        <ScrollRefresh />
-        <div className="relative">
-          <Navbar />
+    <ErrorBoundary>
+      <MotionConfig reducedMotion="user">
+        <LenisProvider>
+          <ScrollRefresh />
+          <div className="relative">
+            <Navbar />
 
-          <main className="relative z-10">
-            <Hero />
-            <WorkReel />
-            <About />
-            <Experience />
-          </main>
+            <main className="relative z-10">
+              <Hero />
+              <WorkReel />
+              <About />
+              <Experience />
+            </main>
 
-          <Footer />
-        </div>
-      </LenisProvider>
-    </MotionConfig>
+            <Footer />
+          </div>
+        </LenisProvider>
+      </MotionConfig>
+    </ErrorBoundary>
   );
 }
 

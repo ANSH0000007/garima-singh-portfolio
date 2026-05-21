@@ -19,7 +19,9 @@ export const workCatalog = [
     items: [
       {
         id: 'digital-bellavita',
-        src: '/work/digital/03-bellavita-luxury-ad.jpeg',
+        src: '/work/digital/03-bellavita-luxury-ad.webp',
+        width: 830,
+        height: 1130,
         title: 'Bellavita Campaign',
         medium: 'Digital Ad Creative',
         confidenceLevel: 'peak',
@@ -28,7 +30,9 @@ export const workCatalog = [
       },
       {
         id: 'digital-pricing-framework',
-        src: '/work/digital/01-pricing-framework.jpeg',
+        src: '/work/digital/01-pricing-framework.webp',
+        width: 1080,
+        height: 1350,
         title: 'Pricing Framework Visual',
         medium: 'Presentation Design',
         confidenceLevel: 'support',
@@ -37,7 +41,9 @@ export const workCatalog = [
       },
       {
         id: 'digital-jam-label',
-        src: '/work/branding-packaging/01-strawberry-organic-jam-label.jpeg',
+        src: '/work/branding-packaging/01-strawberry-organic-jam-label.webp',
+        width: 1080,
+        height: 720,
         title: 'Strawberry Label Study',
         medium: 'Digital Product Label',
         confidenceLevel: 'quiet',
@@ -46,12 +52,25 @@ export const workCatalog = [
       },
       {
         id: 'digital-honey-packaging',
-        src: '/work/branding-packaging/02-nature-hive-packaging.jpeg',
+        src: '/work/branding-packaging/02-nature-hive-packaging.webp',
+        width: 1080,
+        height: 1439,
         title: 'Nature Hive Packaging Visual',
         medium: 'Digital Packaging Mockup',
         confidenceLevel: 'support',
         peakType: null,
         frameStyle: 'clean',
+      },
+      {
+        id: 'digital-lovexa',
+        src: '/work/digital/05-lovexa-brand-identity.webp',
+        width: 723,
+        height: 1024,
+        title: 'Lovexa Brand Identity',
+        medium: 'Brand Strategy & Identity',
+        confidenceLevel: 'support',
+        peakType: null,
+        frameStyle: 'editorial',
       },
     ],
   },
@@ -69,7 +88,9 @@ export const workCatalog = [
     items: [
       {
         id: 'poster-amul',
-        src: '/work/poster/02-amul-love-at-first-bite.jpeg',
+        src: '/work/poster/02-amul-love-at-first-bite.webp',
+        width: 966,
+        height: 1280,
         title: 'Amul Love at First Bite',
         medium: 'Brand Poster',
         confidenceLevel: 'peak',
@@ -78,7 +99,9 @@ export const workCatalog = [
       },
       {
         id: 'poster-nescafe',
-        src: '/work/poster/01-nescafe-poster.jpeg',
+        src: '/work/poster/01-nescafe-poster.webp',
+        width: 1360,
+        height: 1920,
         title: 'Nescafe Poster',
         medium: 'Brand Poster',
         confidenceLevel: 'support',
@@ -87,7 +110,9 @@ export const workCatalog = [
       },
       {
         id: 'poster-titan',
-        src: '/work/poster/03-titan-watch-poster.jpeg',
+        src: '/work/poster/03-titan-watch-poster.webp',
+        width: 841,
+        height: 1142,
         title: 'Titan Watch Poster',
         medium: 'Monochrome Campaign',
         confidenceLevel: 'quiet',
@@ -96,7 +121,9 @@ export const workCatalog = [
       },
       {
         id: 'poster-mazza',
-        src: '/work/poster/04-mazza-drink-deeply.jpeg',
+        src: '/work/poster/04-mazza-drink-deeply.webp',
+        width: 1080,
+        height: 1350,
         title: 'Mazza Product Poster',
         medium: 'Product Campaign',
         confidenceLevel: 'support',
@@ -119,7 +146,9 @@ export const workCatalog = [
     items: [
       {
         id: 'book-orient-express',
-        src: '/work/book-cover/03-murder-on-the-orient-express.jpeg',
+        src: '/work/book-cover/03-murder-on-the-orient-express.webp',
+        width: 863,
+        height: 1052,
         title: 'Murder on the Orient Express',
         medium: 'Book System Mockup',
         confidenceLevel: 'peak',
@@ -128,7 +157,9 @@ export const workCatalog = [
       },
       {
         id: 'book-next-move',
-        src: '/work/book-cover/01-the-next-move-cover.jpeg',
+        src: '/work/book-cover/01-the-next-move-cover.webp',
+        width: 1599,
+        height: 1158,
         title: 'The Next Move',
         medium: 'Book Jacket Design',
         confidenceLevel: 'support',
@@ -137,7 +168,9 @@ export const workCatalog = [
       },
       {
         id: 'book-magic',
-        src: '/work/book-cover/02-mysterious-book-of-magic.jpeg',
+        src: '/work/book-cover/02-mysterious-book-of-magic.webp',
+        width: 783,
+        height: 462,
         title: 'Mysterious Book of Magic',
         medium: 'Book Cover Illustration',
         confidenceLevel: 'quiet',
@@ -160,7 +193,9 @@ export const workCatalog = [
     items: [
       {
         id: 'calligraphy-design',
-        src: '/work/calligraphy/01-design-lettering.jpeg',
+        src: '/work/calligraphy/01-design-lettering.webp',
+        width: 1600,
+        height: 1200,
         title: 'Design Lettering Study',
         medium: 'Hand Lettering',
         confidenceLevel: 'peak',
@@ -169,7 +204,9 @@ export const workCatalog = [
       },
       {
         id: 'calligraphy-artistic-card',
-        src: '/work/calligraphy/02-artistic-garima-script.jpeg',
+        src: '/work/calligraphy/02-artistic-garima-script.webp',
+        width: 1080,
+        height: 1080,
         title: 'Artistic Garima Script Card',
         medium: 'Floral Script Identity',
         confidenceLevel: 'quiet',

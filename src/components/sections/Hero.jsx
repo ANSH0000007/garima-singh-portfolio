@@ -2,14 +2,11 @@ import { useRef, useEffect, useState, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import Marquee from '../Marquee';
 import MagneticButton from '../MagneticButton';
 import portraitUrl from '../../assets/garima-portrait.jpeg';
 
 const HeroPortrait = lazy(() => import('../canvas/HeroPortrait'));
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const sectionRef = useRef(null);
@@ -106,9 +103,9 @@ export default function Hero() {
             <h1 className="hidden md:block font-serif font-semibold text-cocoa leading-[0.92] text-[clamp(4.25rem,12vw,7.75rem)] mb-6">
               GARIMA SINGH
             </h1>
-            <h1 className="md:hidden font-serif font-semibold text-cocoa text-[clamp(2.7rem,14vw,3.65rem)] leading-none mb-6">
+            <div aria-hidden="true" className="md:hidden font-serif font-semibold text-cocoa text-[clamp(2.7rem,14vw,3.65rem)] leading-none mb-6">
               Garima Singh
-            </h1>
+            </div>
           </motion.div>
 
           <motion.div

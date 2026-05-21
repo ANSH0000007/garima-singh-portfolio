@@ -376,6 +376,7 @@
   .chapter-grid {
     display: grid;
     gap: clamp(0.75rem, 1.45vw, 1.15rem);
+    align-items: start;
   }
 
   .template-immersive .chapter-grid {
@@ -408,24 +409,36 @@
   .work-frame {
     border-radius: 1.05rem;
     overflow: hidden;
-    border: 1px solid rgba(255, 232, 242, 0.3);
+    border: 0;
     background: rgba(255, 252, 249, 0.08);
     box-shadow: 0 16px 36px rgba(20, 6, 13, 0.28);
   }
 
-  .frame-clean .work-frame {
+  .work-frame-border {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: 1.05rem;
+    border: 1px solid rgba(255, 232, 242, 0.3);
+    transition: border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 10;
+  }
+
+  .frame-clean .work-frame-border {
     border-color: rgba(255, 236, 245, 0.26);
-    box-shadow: 0 14px 28px rgba(26, 10, 17, 0.22);
   }
 
-  .frame-soft-matte .work-frame {
+  .frame-soft-matte .work-frame-border {
     border-color: rgba(255, 218, 236, 0.38);
-    box-shadow: 0 19px 46px rgba(34, 10, 20, 0.32);
   }
 
-  .frame-editorial .work-frame {
+  .frame-editorial .work-frame-border {
     border-color: rgba(255, 237, 246, 0.28);
-    box-shadow: 0 21px 52px rgba(19, 6, 13, 0.3);
+  }
+
+  .work-card:hover .work-frame-border {
+    border-color: rgba(255, 255, 255, 0.55);
+    box-shadow: inset 0 0 10px rgba(255, 218, 236, 0.22);
   }
 
   .work-image {
@@ -917,6 +930,23 @@
     .work-image {
       height: auto;
       max-height: 24rem;
+    }
+
+    .work-frame-border {
+      border-color: rgba(212, 20, 120, 0.14);
+    }
+    .frame-clean .work-frame-border {
+      border-color: rgba(212, 20, 120, 0.12);
+    }
+    .frame-soft-matte .work-frame-border {
+      border-color: rgba(212, 20, 120, 0.18);
+    }
+    .frame-editorial .work-frame-border {
+      border-color: rgba(212, 20, 120, 0.16);
+    }
+    .work-card:hover .work-frame-border {
+      border-color: rgba(212, 20, 120, 0.35);
+      box-shadow: inset 0 0 8px rgba(212, 20, 120, 0.08);
     }
 
     .work-card-meta h4 {

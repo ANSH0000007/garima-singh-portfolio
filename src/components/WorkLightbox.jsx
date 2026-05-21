@@ -59,7 +59,7 @@ export default function WorkLightbox({
         </button>
 
         <div className="work-lightbox-image-wrap">
-          <img src={item.src} alt={item.title} className="work-lightbox-image" />
+          <img src={item.src} alt={item.title} className="work-lightbox-image" width={item.width} height={item.height} />
         </div>
 
         <div className="work-lightbox-meta">
